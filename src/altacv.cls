@@ -126,6 +126,7 @@
 \fi
 
 \RequirePackage{hyperref}
+\RequirePackage{letltxmacro}
 \LetLtxMacro\oldhref\href
 \RenewDocumentCommand{\href}{o m m}{%
   \IfValueTF{#1}

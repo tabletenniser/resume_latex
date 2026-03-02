@@ -140,16 +140,16 @@
             \cvtag{C/C++}
             \cvtag{Golang}
             \cvtag{HTML/CSS/Javascript}
-            \cvtag{PHP}
-            
+
             \medskip
+            \cvtag{CI/CD}
+            \cvtag{GCP}
+            \cvtag{MCP}
+            \cvtag{Git}
             \cvtag{Linux/MacOS}
-            \cvtag{Vim}
-            \cvtag{Mercurial/Git}
-            \cvtag{Agile Development}
-            \cvtag{TDD}
+            \cvtag{Agile/TDD}
             \medskip
-            
+
             \cvtag{Table Tennis}
             \cvtag{Violin}
             \cvtag{Mandarin}
@@ -186,23 +186,6 @@
         % ----- EDUCATION -----
             
         
-        % ----- MOST PROUD -----
-        \cvsection{Reference}
-        All projects and working experience are available upon request.
-        % ----- MOST PROUD -----
-        
-        % \cvsection{A Day of My Life}
-        
-        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-        % \wheelchart{outer radius}{inner radius}{
-        % comma-separated list of value/text width/color/detail}
-        % \wheelchart{1.5cm}{0.5cm}{
-        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
-        %   3/8em/accent!40/Hopeful novelist by night,
-        %   8/8em/accent!60/Daytime job,
-        %   2/10em/accent/Sports and relaxation,
-        %   5/6em/accent!20/Spending time with family
-        % }
         
         % use ONLY \newpage if you want to force a page break for
         % ONLY the current column
@@ -212,63 +195,61 @@
         %% page if the content is too long.
         \switchcolumn
         
-        % ----- ABOUT ME -----
-        \cvsection{About Me}
-            \begin{quote}
-                Responsible individual seeking for a fun software developer role.
-            \end{quote}
-        % ----- ABOUT ME -----
-        
         % ----- EXPERIENCE -----
         \cvsection{Work Experience}
-            \logo{google}
-            \cvevent{Software Developer Engineer}{| Google Inc}{03 2018 -- Current}{Seattle, US}
+            \logo{duolingo}
+            \cvevent{Software Engineer}{| Duolingo Inc}{09 2022 -- Current}{Seattle, US}
             \begin{itemize}
-            	\item Tech lead for an immediate team of 3 people
-                \item Create framework to enable cross-cloud development for \href{https://cloud.google.com/blog/products/data-analytics/introducing-bigquery-omni}{BigQuery Omni}
-                \item Enhance performance testing and benchmarking framework for \href{https://cloud.google.com/bigquery}{BigQuery}
+                \item Founding member of DevXAI team; introduced MCP to the company and maintain 14 in-house MCP servers
+                \item Built DuolingoAI Slackbot, now used weekly by 50\% of the engineering organization
+                \item Sped up client CI time by 68\% through caching, memory-optimized machines, parallelization, and async non-blocking steps
             \end{itemize}
             \divider
-            
+
+            \logo{google}
+            \cvevent{Software Engineer}{| Google Inc}{03 2018 -- 09 2022}{Seattle, US}
+            \begin{itemize}
+                \item Led team of 3 to build testing and release pipeline for \href{https://cloud.google.com/blog/products/data-analytics/introducing-bigquery-omni}{BigQuery Omni} via GCS relay, enabling end-to-end testing a year before production infrastructure was ready
+                \item Built A/B performance testing framework that benchmarked \href{https://cloud.google.com/bigquery}{BigQuery} latency noise to {<}5\%, integrated at the pre-commit level
+                \item Designed thin-layered reservations system for parallel end-to-end presubmit tests, later adopted by 5 other teams at Google
+            \end{itemize}
+            \divider
+
             \logo{qumulo}
-            \cvevent{Technical Member of Stauff }{| Qumulo Inc}{09 2016 -- 03 2018}{Seattle, US}
+            \cvevent{Technical Member of Staff}{| Qumulo Inc}{09 2016 -- 03 2018}{Seattle, US}
             \begin{itemize}
                 \item Improved network protocol implementation (NFS, SMB \& LDAP) for Qumulo FS
-                \item Added ability to support 3-drive failure to the protection layer of Qumulo FS
-                \item Analyzed and accelerated Qumulo FS performance by adding file read cache
+                \item Added 3-drive failure support to the protection layer of Qumulo FS
+                \item Accelerated Qumulo FS performance by adding file read cache
             \end{itemize}
             \divider
-            
+
             \logo{google}
-            \cvevent{Software Engineer Tools \& Infrastructure Intern}{| Google Inc}{05 2015 -- 08 2015}{Mountain View, US}
+            \cvevent{Software Engineer Intern}{| Google Inc}{05 2015 -- 08 2015}{Mountain View, US}
             \begin{itemize}
                 \item Introduced custom pre-submit checks for the Google Social team
             \end{itemize}
             \divider
-            
+
             \logo{altera}
-            \cvevent{Software Intern}{|  Altera Corp (Now Intel Corp)}{05 2014 -- 05 2015}{Toronto, Canada}
+            \cvevent{Software Intern}{| Altera Corp (Now Intel Corp)}{05 2014 -- 05 2015}{Toronto, Canada}
             \begin{itemize}
-                \item Improved bench-marking framework to compile and execute circuit designs
-                \item Competitive analysis to compare Quartus with Vivado
+                \item Improved benchmarking framework to compile and execute circuit designs
             \end{itemize}
             \divider
-            
+
             \logo{rocscience}
-            \cvevent{Software Intern}{|  Rocscience Inc}{05 2013 -- 08 2013}{Toronto, Canada}
+            \cvevent{Software Intern}{| Rocscience Inc}{05 2013 -- 08 2013}{Toronto, Canada}
             \begin{itemize}
-                \item Developed new 3D stress analysis Windows application called ExamineTab
-                \item Receipt of NSERC (Undergraduate Student Research) award
+                \item Developed 3D stress analysis application; NSERC research award recipient
             \end{itemize}
             \divider
-            
+
             \logo{utoronto}
-             \cvevent{Research Assistant}{|  University of Toronto}{05 2012 -- 08 2012}{Toronto, Canada}
+            \cvevent{Research Assistant}{| University of Toronto}{05 2012 -- 08 2012}{Toronto, Canada}
             \begin{itemize}
-                \item Introduced new Python and Matlab programs to expedite data collection process
-                \item Participant of the SURF (Summer Undergraduate Research Fellowship) program
+                \item SURF fellow; built Python and Matlab tools to expedite data collection
             \end{itemize}
-            \divider
         % ----- EXPERIENCE -----
         
         
