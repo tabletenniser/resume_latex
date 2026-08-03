@@ -29,6 +29,9 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
+% Make hyperlinks visibly obvious (blue)
+\hypersetup{colorlinks=true, allcolors=title}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Title Font Definitions
 %Used for Name  and Section Headings
