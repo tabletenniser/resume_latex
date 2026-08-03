@@ -29,8 +29,12 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
-% Make hyperlinks visibly obvious without adding visual clutter.
+% Keep links visibly distinct in both color and treatment.
 \hypersetup{colorlinks=true, allcolors=title}
+\usepackage{soul}
+\setul{0.4pt}{0.4pt}
+\let\plainhref\href
+\renewcommand{\href}[2]{\plainhref{#1}{\ul{#2}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Title Font Definitions
