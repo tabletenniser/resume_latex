@@ -243,3 +243,11 @@ Last Updated on \today
 \vspace{-\topsep}\begin{itemize}[label=\ding{212}]\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
 
+% Skill tag: small rectangular box
+\usepackage{tikz}
+\newcommand{\skilltag}[1]{%
+  \tikz[baseline=(tag.base)]{%
+    \node[draw=headings, rounded corners=1.5pt, inner sep=2.5pt, fill=headings!8, font=\footnotesize](tag){\strut #1};%
+  }\hspace{2pt}\allowbreak%
+}
+
