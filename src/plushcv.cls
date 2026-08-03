@@ -29,8 +29,17 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
-% Make hyperlinks visibly obvious (blue)
+% Make hyperlinks visibly obvious (blue with dotted underline)
 \hypersetup{colorlinks=true, allcolors=title}
+\usepackage{tikz}
+\newcommand{\dottedunderline}[1]{%
+  \tikz[baseline=(text.base)]{%
+    \node[inner sep=0pt, outer sep=0pt](text){#1};
+    \draw[dotted, thick, title] (text.south west) -- (text.south east);
+  }%
+}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\dottedunderline{#2}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Title Font Definitions
@@ -247,7 +256,7 @@ Last Updated on \today
 \usepackage{tikz}
 \newcommand{\skilltag}[1]{%
   \tikz[baseline=(tag.base)]{%
-    \node[draw=headings, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, minimum height=13pt, fill=headings!8, font=\footnotesize](tag){#1};%
+    \node[draw=headings, rounded corners=2pt, inner xsep=4pt, inner ysep=2.5pt, minimum height=14pt, fill=headings!8, font=\footnotesize, anchor=base](tag){#1};%
   }\hspace{3pt}\allowbreak%
 }
 
