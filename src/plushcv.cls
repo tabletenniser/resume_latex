@@ -247,7 +247,7 @@ Last Updated on \today
 \usepackage{tikz}
 \newcommand{\skilltag}[1]{%
   \tikz[baseline=(tag.base)]{%
-    \node[draw=headings, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, fill=headings!8, font=\footnotesize](tag){#1};%
+    \node[draw=headings, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, minimum height=13pt, fill=headings!8, font=\footnotesize](tag){#1};%
   }\hspace{3pt}\allowbreak%
 }
 
