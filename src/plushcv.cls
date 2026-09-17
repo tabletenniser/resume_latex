@@ -29,12 +29,12 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
-% Make hyperlinks visibly obvious (blue with dotted underline)
+% Keep links visibly distinct in both color and treatment.
 \hypersetup{colorlinks=true, allcolors=title}
 \usepackage{soul}
-\setul{0.5pt}{0.5pt}
-\let\oldhref\href
-\renewcommand{\href}[2]{\oldhref{#1}{\ul{#2}}}
+\setul{0.4pt}{0.4pt}
+\let\plainhref\href
+\renewcommand{\href}[2]{\plainhref{#1}{\ul{#2}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Title Font Definitions
@@ -170,20 +170,24 @@ Last Updated on \today
 
 
 \newcommand{\namesection}[5][]{
+\ifx\\#1\\
+\noindent\begin{minipage}[t]{\textwidth}
+\else
 \noindent\begin{minipage}[t]{0.82\textwidth}
+\fi
 \RaggedRight{
 \color{title}
-\fontsize{50pt}{60pt}
+\fontsize{44pt}{52pt}
 \fontspec[Path = \pathtitlefont]{\firstnamefont}\selectfont #2
 \fontspec[Path = \pathtitlefont]{\firstnamefont}\selectfont #3
 } \\[5pt]
 
-\noindent\makebox[\linewidth]{\color{title}\rule{0.82\paperwidth}{0pt}}
+\noindent\makebox[\linewidth]{\color{title}\rule{\linewidth}{0pt}}
 \vspace{-15pt}
 
-\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{14pt}{14pt}\selectfont #4}
+\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{13pt}{14pt}\selectfont #4}
 
-\noindent\makebox[\linewidth]{\color{title}\rule{0.82\paperwidth}{0pt}}
+\noindent\makebox[\linewidth]{\color{title}\rule{\linewidth}{0pt}}
 \vspace{-15pt}
 
 \RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{9pt}{12pt}\selectfont #5}
@@ -192,12 +196,15 @@ Last Updated on \today
 \noindent{\color{title}\rule{\linewidth}{0.4pt}}
 \vspace{2pt}
 \end{minipage}%
+\ifx\\#1\\
+\else
 \hfill
 \begin{minipage}[t]{0.15\textwidth}
 \vspace{0pt}
 \raggedleft
-\ifx\\#1\\\else\includegraphics[width=2.2cm]{#1}\fi
+\includegraphics[width=2.2cm]{#1}
 \end{minipage}
+\fi
 }
 
 % Section separators
@@ -244,14 +251,5 @@ Last Updated on \today
 
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
-\vspace{-\topsep}\begin{itemize}[label=\ding{212}]\itemsep1pt \parskip0pt \parsep0pt}
+\vspace{-\topsep}\begin{itemize}[label=\textbullet]\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
-
-% Skill tag: small rectangular box
-\usepackage{tikz}
-\newcommand{\skilltag}[1]{%
-  \tikz[baseline=(tag.base)]{%
-    \node[draw=headings, rounded corners=2pt, inner xsep=4pt, inner ysep=0pt, minimum height=14pt, fill=headings!8, font=\footnotesize, anchor=center, text depth=0pt, text height=8pt](tag){#1};%
-  }\hspace{3pt}\allowbreak%
-}
-
