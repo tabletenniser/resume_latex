@@ -232,7 +232,7 @@ Last Updated on \today
 
 % Location command
 \newcommand{\location}[1]{
-\color{headings}\raggedright\fontspec[Path = \pathlocationfont]{\locationfont}\fontsize{\locationsize}{11pt}\selectfont {#1\\} \normalfont}
+\color{headings}\raggedright\fontspec[Path = \pathlocationfont]{\locationfont}\fontsize{\locationsize}{11pt}\selectfont {#1} \normalfont}
 
 %Contact Line
 \newcommand{\contactline}[4]{\begingroup
