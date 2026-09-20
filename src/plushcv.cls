@@ -151,6 +151,7 @@
 
 % Set main fonts
 \usepackage{fontspec}
+\linespread{0.96}
 \setmainfont[Color=primary, Path = \pathmainfont,BoldFont=\mainfontbold,UprightFeatures={SizeFeatures={Size=\mainfontsize}},
   BoldFeatures={SizeFeatures={Size=\mainfontsize}}]{\mainfont}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = \pathmainfont,UprightFeatures={SizeFeatures={Size=\mainfontsize}}
@@ -190,7 +191,7 @@ Last Updated on \today
 \noindent\makebox[\linewidth]{\color{title}\rule{\linewidth}{0pt}}
 \vspace{-15pt}
 
-\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{9pt}{12pt}\selectfont #5}
+\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{8pt}{11pt}\selectfont #5}
 
 \vspace{6pt}
 \noindent{\color{title}\rule{\linewidth}{0.4pt}}
@@ -209,13 +210,13 @@ Last Updated on \today
 
 % Section separators
 \usepackage{titlesec}
-\titlespacing{\section}{0pt}{5pt}{5pt}
+\titlespacing{\section}{0pt}{4pt}{4pt}
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
-\newcommand{\sectionsep}{\vspace{5pt}}
+\newcommand{\sectionsep}{\vspace{3pt}}
 
 % Headings command
 \titleformat{\section}{\color{title}
-\scshape\fontspec[Path = \pathtitlefont]{\titlefont}\fontsize{16pt}{24pt}\selectfont \raggedright}{}{0em}{}
+\scshape\fontspec[Path = \pathtitlefont]{\titlefont}\fontsize{15pt}{20pt}\selectfont \raggedright}{}{0em}{}
 
 % Subheadings command
 \titleformat{\subsection}{
@@ -223,24 +224,23 @@ Last Updated on \today
 
 %Subheadings on the right
 \newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = \pathsubheadingfont ]{\subheadingfont}\fontsize{\subheadingsize}{14pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\color{subheadings}\fontspec[Path = \pathsubheadingfont ]{\subheadingfont}\fontsize{\subheadingsize}{13pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
 % Descriptors command
 \newcommand{\descript}[1]{
-\color{subheadings}\raggedright\scshape\fontspec[Path = \pathdescriptorfont]{\descriptorfont}\fontsize{\descriptorsize}{13pt}\selectfont {#1 \\} \normalfont}
+\color{subheadings}\raggedright\scshape\fontspec[Path = \pathdescriptorfont]{\descriptorfont}\fontsize{\descriptorsize}{12pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
 \newcommand{\location}[1]{
-\color{headings}\raggedright\fontspec[Path = \pathlocationfont]{\locationfont}\fontsize{\locationsize}{12pt}\selectfont {#1\\} \normalfont}
+\color{headings}\raggedright\fontspec[Path = \pathlocationfont]{\locationfont}\fontsize{\locationsize}{11pt}\selectfont {#1} \normalfont}
 
 %Contact Line
-\newcommand{\contactline}[5]{\begingroup
+\newcommand{\contactline}[4]{\begingroup
 \setbox0=\hbox{
-\includegraphics[scale=0.23,trim={1.4cm 1.25cm -0.4cm 0cm}]{icons/main/home.png}{#1}\hspace{0.2cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/github.png}{#2}\hspace{0.2cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/linkedin.png}{#3}\hspace{0.2cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/mail.png}{#4}\hspace{0.2cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/phone.png}{#5}
+\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/mail.png}{#1}\hspace{0.12cm}
+\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/phone.png}{#2}\hspace{0.12cm}
+\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/github.png}{#3}\hspace{0.12cm}
+\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/linkedin.png}{#4}
 }\parbox{\wd0}{\box0}\endgroup}
 
 %Inline Centered Logo

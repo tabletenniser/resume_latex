@@ -17,13 +17,21 @@
 %     TITLE NAME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\namesection{Aaron (Zexuan)}{Wang}{Software Engineer | 10+ Years in DevTools, Infra \& AI}{\contactline{\href{https://individual.utoronto.ca/zexuan/}{Website}}{\href{https://www.github.com/tabletenniser}{GitHub}}{\href{https://www.linkedin.com/in/tabletenniser}{LinkedIn}}{\href{mailto:tabletenniser@gmail.com}{tabletenniser@gmail.com}}{\href{tel:+14252408197}{425-240-8197}}}
+\namesection{Aaron (Zexuan)}{Wang}{\fontsize{12pt}{14pt}\selectfont Staff Software Engineer | 10+ Years in DevTools, Infra \& AI | Bellevue, WA}{\contactline{\href{mailto:tabletenniser@gmail.com}{tabletenniser@gmail.com}}{\href{tel:+14252408197}{425-240-8197}}{\href{https://www.github.com/tabletenniser}{github.com/tabletenniser}}{\href{https://www.linkedin.com/in/tabletenniser}{linkedin.com/in/tabletenniser}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COLUMN ONE (Main)
+%     EXPERTISE & TECHNOLOGY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}[t]{0.69\textwidth}
+\section{Expertise \& Technology}
+\vspace{6pt}
+\begin{tightemize}
+\item \textbf{AI:} LLM \& Agentic AI \textbullet{} MCP \textbullet{} RAG \& Vector Search \textbullet{} LLM Evals \& Observability \textbullet{} AI Safety \& Guardrails
+\item \textbf{Infrastructure:} DevEx \textbullet{} CI/CD \& Agentic SDLC \textbullet{} Distributed Systems \textbullet{} AWS/GCP \textbullet{} Kubernetes \textbullet{} Terraform \textbullet{} Docker \textbullet{} Jenkins \textbullet{} Temporal \textbullet{} Grafana \textbullet{} Honeycomb \textbullet{} Sentry
+\item \textbf{Languages:} Python \textbullet{} Javascript / Typescript \textbullet{} Java \textbullet{} Go \textbullet{} C/C++
+\item \textbf{Leadership:} Technical Strategy \& Insight \textbullet{} Cross-Org Leadership
+\end{tightemize}
+\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
@@ -32,37 +40,37 @@
 \section{Experience}
 
 \noindent\companylogo{duolingo.jpeg}\runsubsection{Duolingo Inc}
-\descript{| Software Engineer}
-\location{Sep 2022 -- Present | Seattle, US}
-\vspace{\topsep}
+\descript{| Staff Software Engineer}
+\location{Sep 2022 -- Present | Seattle, WA}
+\vspace{4pt}
 \begin{tightemize}
-\sectionsep
-\item Founding member of DevX AI; led evaluations and company-wide rollouts that achieved 100\% adoption across engineering; \href{https://openai.com/codex}{featured by OpenAI}
-\item Set Duolingo's MCP platform strategy and standards; led 13+ engineers to deliver 30+ servers generating 30K+ weekly tool calls and saving an estimated 500 engineering hours per week
-\item Led development of open-source \href{https://github.com/duolingo/slack-ai-agent}{DuolingoAI}, an agent spanning 30+ MCP servers; grew it to 400+ weekly active users with an 80\% positive-feedback rate
-\item Architected production guardrails for internal agents: role-based tool access, approval-gated writes, privacy boundaries, and regression evaluations
-\item Led Android and iOS CI modernization, cutting build time 68\% (50 to 16 min) through runner optimization, caching, and pipeline parallelization
+\item Founding member of DevX AI; led AI tooling rollouts to 100\% adoption across engineering; \href{https://openai.com/codex}{quoted by OpenAI}
+\item Set MCP platform strategy; led 13+ engineers to ship 30+ internal MCP servers (\href{https://github.com/duolingo/slack-mcp}{Example}), saving 500+ eng hrs / wk
+\item Built open-source \href{https://github.com/duolingo/slack-ai-agent}{DuolingoAI} agent; now used weekly by 50\%+ of the company, with 90\%+ positive feedback
+\item Architected production guardrails for agents: role-based access, approval-gated writes, privacy boundaries
+\item Led Android/iOS CI modernization, \href{https://blog.duolingo.com/sped-up-android-ios-builds}{cutting build time by 68\% (50 to 16 min)}
 \end{tightemize}
-\sectionsep
+\vspace{10pt}
 
 \noindent\companylogo{google.png}\runsubsection{Google Inc}
-\descript{| Software Engineer}
-\location{Mar 2018 -- Sep 2022 | Seattle, US}
+\descript{| Senior Software Engineer}
+\location{Mar 2018 -- Sep 2022 | Kirkland, WA}
+\vspace{4pt}
 \begin{tightemize}
-\sectionsep
-\item Led a three-engineer team to design \href{https://cloud.google.com/blog/products/data-analytics/introducing-bigquery-omni}{BigQuery Omni's} cross-cloud test and release platform, enabling E2E validation a year before production infrastructure was ready
-\item Built a pre-commit A/B performance framework that held BigQuery latency noise below 5\%, making regressions actionable before merge
-\item Designed a shared reservation system to parallelize presubmit tests, later adopted by five additional Google teams
+\item Led 3 engineers on \href{https://cloud.google.com/blog/products/data-analytics/introducing-bigquery-omni}{BigQuery Omni's} cross-cloud platform team; E2E validation a year before production
+\item Built pre-commit A/B framework holding BigQuery latency noise below 5\%, catching regressions before merge
+\item Designed shared presubmit reservation system to parallelize tests; adopted by five other Google teams
 \end{tightemize}
-\sectionsep
+\vspace{10pt}
 
 \noindent\companylogo{qumulo.png}\runsubsection{Qumulo Inc}
 \descript{| Technical Member of Staff}
-\location{Sep 2016 -- Mar 2018 | Seattle, US}
+\location{Sep 2016 -- Mar 2018 | Seattle, WA}
+\vspace{4pt}
 \begin{tightemize}
-\sectionsep
-\item Strengthened Qumulo's distributed file system across NFS, SMB, and LDAP; added three-drive failure tolerance to its protection layer
-\item Designed tiered file-read caching for Qumulo FS (\href{https://patents.justia.com/patent/10534758}{US Patent 10,534,758})
+\item Strengthened Qumulo's distributed file system, improving reliability across NFS, SMB, and LDAP access
+\item Added three-drive failure tolerance to the protection layer, allowing data to survive loss of any three drives
+\item Co-designed and implemented tiered file-read caching (\href{https://patents.justia.com/patent/10534758}{US Patent 10,534,758})
 \end{tightemize}
 \sectionsep
 
@@ -74,38 +82,6 @@
 \noindent\runsubsection{University of Toronto}
 \descript{| BASc in Engineering Science}
 \location{Computer Engineering | Sep 2011 -- May 2016 | Ranked 8 of 253}
-\textbf{Euclid Mathematics Contest:} 13 of 16,000 (top 0.1\%) \\
-\sectionsep
-
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.28\textwidth}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     SKILLS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Expertise}
-Developer platforms \\
-Agentic AI \& MCP \\
-CI/CD infrastructure \\
-Distributed systems \\
-Technical strategy \\
-Cross-org leadership \\
-\sectionsep
-
-\section{Technology}
-\subsection{Languages}
-\sectionsep
-Python \textbullet{} Java \textbullet{} Go \\
-C/C++ \textbullet{} TypeScript \\
-\sectionsep
-\subsection{Cloud / Infrastructure}
-\sectionsep
-AWS \textbullet{} GCP \textbullet{} Kubernetes \\
-Terraform \textbullet{} Docker \textbullet{} Jenkins \\
-Temporal \textbullet{} Grafana \\
-Honeycomb \textbullet{} Sentry \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,25 +89,17 @@ Honeycomb \textbullet{} Sentry \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Speaking \& Writing}
-\href{https://mcpdevsummitna26.sched.com/event/2Hbf5/keynote-duolingos-ai-slackbot-an-enterprise-assistant-with-180+-mcp-tools-aaron-wang-software-engineer-duolingo-inc}{MCP Dev Summit keynote} \\
-\href{https://blog.duolingo.com/aislackbot/}{DuolingoAI blog post} \\
-\href{https://blog.duolingo.com/sped-up-android-ios-builds/}{Android / iOS CI blog post} \\
-\href{https://openai.com/codex}{OpenAI Codex testimonial} \\
+\href{https://youtu.be/5sb9iA2v78g}{MCP Dev Summit keynote} \textbullet{} \href{https://blog.duolingo.com/aislackbot/}{DuolingoAI blog post} \textbullet{} \href{https://blog.duolingo.com/sped-up-android-ios-builds/}{Android / iOS CI blog post} \textbullet{} \href{https://openai.com/codex}{OpenAI Codex testimonial}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     ACHIEVEMENTS
+%     BEYOND WORK
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Distinctions}
-\textbf{Team Canada --- Table Tennis}
-\begin{itemize}[label=\textbullet, itemsep=1pt, parsep=0pt, topsep=2pt, leftmargin=1.2em]
-\item \href{https://olympic.ca/press/experienced-team-canada-table-tennis-team-announced-for-paris-2024/}{2024 Olympic team member}
-\item \href{https://ttcanada.ca/canadian-junior-championships/}{3x national doubles champion (2011, 2022, 2026)}
-\item \href{https://canadagames2009.wordpress.com/2011/02/25/two-ontario-boys-to-meet-in-the-gold-medal-final-in-table-tennis}{2011 Canada Games silver medalist}
-\item \href{https://ttcanada.ca/canadian-national-team-members-2021/}{National team member, 2022--2026}
-\end{itemize}
+\section{Beyond Work}
+\textbf{Team Canada --- Table Tennis:} \href{https://olympic.ca/press/experienced-team-canada-table-tennis-team-announced-for-paris-2024/}{2024 Olympic team member} \textbullet{} \href{https://www.instagram.com/p/Da9Qw_-jXyL/}{3x national doubles champion (2011, 2022, 2026)} \\
+\href{https://ttcanada.ca/champions-crowned-at-the-2025-canadian-senior-table-tennis-championships}{2x national singles bronze medalist (2024, 2025)} \textbullet{} \href{https://canadagames2009.wordpress.com/2011/02/25/two-ontario-boys-to-meet-in-the-gold-medal-final-in-table-tennis}{2011 Canada Games silver medalist} \textbullet{} \href{https://ttcanada.ca/canadian-national-team-members-2021/}{National team, 2022--2026} \\
+\textbf{Euclid Mathematics Contest:} \href{https://www.yumpu.com/en/document/view/4027500/2011-results-euclid-contest-2011-resultats-concours-euclide}{13 of 16,000 (top 0.1\%)}
 \sectionsep
 
-\end{minipage}
 \end{document}
