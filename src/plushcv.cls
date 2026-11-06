@@ -1,255 +1,83 @@
-% Intro Options
-\ProvidesClass{plushcv}[2021/11/30 CV class]
 \NeedsTeXFormat{LaTeX2e}
-\DeclareOption{print}{\def\@cv@print{}}
-\DeclareOption*{%
-  \PassOptionsToClass{\CurrentOption}{article}
-}
+\ProvidesClass{plushcv}[2026/10/26 Single-column resume]
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-\LoadClass{article}
+% Allow fractional font sizes when vertically centering the company headings.
+\RequirePackage{fix-cm}
+\LoadClass[letterpaper,10pt]{article}
 
-% Package Imports
-\usepackage[lmargin=0.9cm, vmargin=0.85cm, rmargin=0.9cm]{geometry}
-\usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{pifont}
-\usepackage[document]{ragged2e}
-
-
-% Publications
-\usepackage{cite}
-\renewcommand\refname{\vskip -1.5cm}
-
-% Color definitions
-\usepackage[usenames,dvipsnames]{xcolor}
-\definecolor{date}{HTML}{666666}
-\definecolor{title}{HTML}{1D76E2}
-\definecolor{primary}{HTML}{2b2b2b}
-\definecolor{headings}{HTML}{6A6A6A}
-\definecolor{subheadings}{HTML}{333333}
-
-% Keep links visibly distinct in both color and treatment.
-\hypersetup{colorlinks=true, allcolors=title}
-\usepackage{soul}
-\setul{0.4pt}{0.4pt}
-\let\plainhref\href
-\renewcommand{\href}[2]{\plainhref{#1}{\ul{#2}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Main Title Font Definitions
-%Used for Name  and Section Headings
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def \pathtitlefont {fonts/sourcesanspro/} 
-\def \firstnamefont {sourcesanspro-SemiBold}
-\def \secondnamefont {sourcesanspro-light}
-\def \titlefont {\firstnamefont}
-\def \namefontsize {9.5}
-
-%% Office Code Pro D Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/officecodeprod/} 
-% \def \firstnamefont {officecodeprod-medium}
-% \def \secondnamefont {officecodeprod-regular}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-
-%% Source Sans Pro Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/sourcesanspro/} 
-% \def \firstnamefont {sourcesanspro-SemiBold}
-% \def \secondnamefont {sourcesanspro-light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Source Serif Pro Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/sourceserifpro/} 
-% \def \firstnamefont {sourceserifpro-SemiBold}
-% \def \secondnamefont {sourceserifpro-light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Prata Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/prata/} 
-% \def \firstnamefont {prata-regular}
-% \def \secondnamefont {prata-regular}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Marcellus Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/marcellus/} 
-% \def \firstnamefont {Marcellus-Regular}
-% \def \secondnamefont {Marcellus-Regular}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% AbrilFatface Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/abril_fatface/} 
-% \def \firstnamefont {AbrilFatface-Regular}
-% \def \secondnamefont {AbrilFatface-Regular}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Merriweather Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/merriweather/} 
-% \def \firstnamefont {Merriweather-Regular}
-% \def \secondnamefont {Merriweather-Light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Merriweather Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/oxygen/} 
-% \def \firstnamefont {Oxygen-Regular}
-% \def \secondnamefont {Oxygen-Light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%% Inter Title:
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/inter/} 
-% \def \firstnamefont {Inter-SemiBold}
-% \def \secondnamefont {inter-light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
-
-%Main Font Definitions
-\def \pathmainfont {fonts/inter/}
-\def \mainfont {inter-light}
-\def \mainfontbold {inter-semibold}
-% \def \mainbolditalicfont {}
-% \def \mainitalicfont {}
-\def \mainfontsize {9.5}
-\def \mainsansfont {inter-light}
-
-%Main Subheading Font Definitions
-%Used for company name and sub-skills
-\def \pathsubheadingfont {\pathtitlefont}
-\def \subheadingfont {\titlefont}
-\def \subheadingsize {12}
-
-%Main Job Descriptor and Location Font Definitions
-%Used for company name and sub-skills
-\def \pathdescriptorfont {\pathsubheadingfont}
-\def \descriptorfont {\secondnamefont}
-\def \descriptorsize {10}
-\def \pathlocationfont {\pathsubheadingfont}
-\def \locationfont {\subheadingfont}
-\def \locationsize {8pt}
-
-%Main Monospace Font Definitions 
-%Used for Job Title and Contact Line 
-\def \pathmonofont {fonts/officecodeprod/}
-\def \monofont {OfficeCodeProD-Light}
-
-
-% Set main fonts
+\usepackage[margin=0.5in]{geometry}
 \usepackage{fontspec}
-\linespread{0.96}
-\setmainfont[Color=primary, Path = \pathmainfont,BoldFont=\mainfontbold,UprightFeatures={SizeFeatures={Size=\mainfontsize}},
-  BoldFeatures={SizeFeatures={Size=\mainfontsize}}]{\mainfont}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = \pathmainfont,UprightFeatures={SizeFeatures={Size=\mainfontsize}}
-  ]{\mainsansfont}
+\usepackage{graphicx}
+% TeX Gyre is included in standard TeX distributions and Tectonic's bundle.
+% Avoid dependencies on untracked font files or machine-specific fonts.
+\setmainfont{texgyreheros}[
+  Extension=.otf,
+  UprightFont=*-regular,
+  BoldFont=*-bold,
+  ItalicFont=*-italic,
+  BoldItalicFont=*-bolditalic
+]
+\usepackage[dvipsnames]{xcolor}
+\definecolor{title}{HTML}{1D76E2}
+\definecolor{primary}{HTML}{2B2B2B}
+\definecolor{secondary}{HTML}{555555}
+\usepackage[colorlinks=true,allcolors=title]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
 
-% Date command
-\usepackage[absolute]{textpos}
-\usepackage[UKenglish]{isodate}
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{1mm}
-\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
-\color{date}\fontspec[Path = \pathmainfont]{\mainfont}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on \today
-\end{textblock}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10.5pt}{12.5pt}}
+\AtBeginDocument{\normalsize\color{primary}\raggedright}
 
-% Name command
-
-
-\newcommand{\namesection}[5][]{
-\ifx\\#1\\
-\noindent\begin{minipage}[t]{\textwidth}
-\else
-\noindent\begin{minipage}[t]{0.82\textwidth}
-\fi
-\RaggedRight{
-\color{title}
-\fontsize{44pt}{52pt}
-\fontspec[Path = \pathtitlefont]{\firstnamefont}\selectfont #2
-\fontspec[Path = \pathtitlefont]{\firstnamefont}\selectfont #3
-} \\[5pt]
-
-\noindent\makebox[\linewidth]{\color{title}\rule{\linewidth}{0pt}}
-\vspace{-15pt}
-
-\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{13pt}{14pt}\selectfont #4}
-
-\noindent\makebox[\linewidth]{\color{title}\rule{\linewidth}{0pt}}
-\vspace{-15pt}
-
-\RaggedRight{\fontspec[Path = \pathmonofont]{\monofont}\fontsize{8pt}{11pt}\selectfont #5}
-
-\vspace{6pt}
-\noindent{\color{title}\rule{\linewidth}{0.4pt}}
-\vspace{2pt}
-\end{minipage}%
-\ifx\\#1\\
-\else
-\hfill
-\begin{minipage}[t]{0.15\textwidth}
-\vspace{0pt}
-\raggedleft
-\includegraphics[width=2.2cm]{#1}
-\end{minipage}
-\fi
+\newcommand{\namesection}[5][]{%
+  \begingroup\centering
+  {\color{title}\fontsize{36pt}{40pt}\selectfont\bfseries #2 #3\par}
+  \vspace{4pt}
+  {\fontsize{12pt}{14pt}\selectfont #4\par}
+  \vspace{5pt}
+  {\fontsize{9.5pt}{12pt}\selectfont #5\par}
+  \endgroup
+  \vspace{7pt}
+  {\color{title}\hrule height 0.4pt}
+  \vspace{12pt}
 }
 
-% Section separators
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{4pt}{4pt}
-\titlespacing{\subsection}{0pt}{0pt}{0pt}
-\newcommand{\sectionsep}{\vspace{3pt}}
+\newcommand{\contacticon}[1]{%
+  \raisebox{-0.25\height}{\includegraphics[height=15pt]{icons/main/#1.png}}\hspace{3pt}%
+}
+\newcommand{\contactline}[4]{%
+  \contacticon{mail}#1\hspace{8pt}\contacticon{phone}#2\hspace{8pt}%
+  \contacticon{github}#3\hspace{8pt}\contacticon{linkedin}#4%
+}
+\newcommand{\companyheading}[4]{%
+  \noindent\begin{minipage}[c]{26pt}
+    \includegraphics[width=26pt,height=26pt,keepaspectratio]{#1}%
+  \end{minipage}\hspace{6pt}%
+  \begin{minipage}[c]{\dimexpr\linewidth-32pt\relax}
+    \runsubsection{#2}\hspace{4pt}\descript{| #3}%
+    \location{#4}%
+  \end{minipage}\par
+}
 
-% Headings command
-\titleformat{\section}{\color{title}
-\scshape\fontspec[Path = \pathtitlefont]{\titlefont}\fontsize{15pt}{20pt}\selectfont \raggedright}{}{0em}{}
+\titleformat{\section}
+  {\color{title}\fontsize{14.5pt}{17pt}\selectfont\bfseries}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{9pt}{5pt}
 
-% Subheadings command
-\titleformat{\subsection}{
-\color{subheadings}\fontspec[Path = \pathsubheadingfont ]{\subheadingfont}\fontsize{\subheadingsize}{14pt}\selectfont\bfseries\uppercase}{}{0em}{}
+\newcommand{\runsubsection}[1]{%
+  {\fontsize{12.5pt}{14.5pt}\selectfont\bfseries #1}%
+}
+\newcommand{\descript}[1]{%
+  {\fontsize{12pt}{14.5pt}\selectfont #1\par}%
+}
+\newcommand{\location}[1]{%
+  {\color{secondary}\fontsize{9.5pt}{11.5pt}\selectfont #1\par}%
+}
+\newcommand{\sectionsep}{\par\vspace{2pt}}
 
-%Subheadings on the right
-\newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = \pathsubheadingfont ]{\subheadingfont}\fontsize{\subheadingsize}{13pt}\selectfont\bfseries\uppercase {#1} \normalfont}
-
-% Descriptors command
-\newcommand{\descript}[1]{
-\color{subheadings}\raggedright\scshape\fontspec[Path = \pathdescriptorfont]{\descriptorfont}\fontsize{\descriptorsize}{12pt}\selectfont {#1 \\} \normalfont}
-
-% Location command
-\newcommand{\location}[1]{
-\color{headings}\raggedright\fontspec[Path = \pathlocationfont]{\locationfont}\fontsize{\locationsize}{11pt}\selectfont {#1} \normalfont}
-
-%Contact Line
-\newcommand{\contactline}[4]{\begingroup
-\setbox0=\hbox{
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/mail.png}{#1}\hspace{0.12cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/phone.png}{#2}\hspace{0.12cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/github.png}{#3}\hspace{0.12cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/linkedin.png}{#4}
-}\parbox{\wd0}{\box0}\endgroup}
-
-%Inline Centered Logo
-\newcommand{\vcenteredinclude}[2]{\begingroup
-\setbox0=\hbox{\includegraphics[scale=0.10,trim={0 0.7cm 0cm 0cm}]{#1} {#2}}
-\parbox{\wd0}{\box0}\endgroup}
-
-
-% Bullet Lists with fewer gaps command
-\newenvironment{tightemize}{
-\vspace{-\topsep}\begin{itemize}[label=\textbullet]\itemsep1pt \parskip0pt \parsep0pt}
-{\end{itemize}\vspace{-\topsep}}
+\newenvironment{tightemize}
+  {\begin{itemize}[leftmargin=1.25em,label=\textbullet,
+    topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt]}
+  {\end{itemize}}

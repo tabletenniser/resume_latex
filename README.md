@@ -1,6 +1,17 @@
-# resume_latex
+# Aaron Wang's resume
 
-Based off the popular AltaCV templatet https://github.com/liantze/AltaCV
+The current resume is [src/main.tex](src/main.tex), with its layout in
+[src/plushcv.cls](src/plushcv.cls) and the compiled output in
+[src/main.pdf](src/main.pdf).
 
-The particular resume is based off this overleaf template:
-https://www.overleaf.com/latex/templates/altacv-nicolasomar-fork/htfpmrwhbwpw
+Build with [Tectonic](https://tectonic-typesetting.github.io/en-US/install.html):
+
+```sh
+cd src
+tectonic main.tex
+```
+
+Alternatively, run `xelatex main.tex` from `src` with a TeX distribution that
+includes the required packages. The template uses bundled TeX Gyre Heros fonts.
+The original contact icons are included in `src/icons/main`; company logos are
+stored alongside `main.tex`.
