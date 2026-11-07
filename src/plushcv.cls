@@ -28,7 +28,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\renewcommand{\normalsize}{\@setfontsize\normalsize{10.5pt}{12.5pt}}
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10.5pt}{13.5pt}}
 \AtBeginDocument{\normalsize\color{primary}\raggedright}
 
 \newcommand{\namesection}[5][]{%
@@ -37,7 +37,7 @@
   \vspace{4pt}
   {\fontsize{12pt}{14pt}\selectfont #4\par}
   \vspace{5pt}
-  {\fontsize{9.5pt}{12pt}\selectfont #5\par}
+  {\fontsize{10pt}{12.5pt}\selectfont #5\par}
   \endgroup
   \vspace{7pt}
   {\color{title}\hrule height 0.4pt}
@@ -64,7 +64,7 @@
 \titleformat{\section}
   {\color{title}\fontsize{14.5pt}{17pt}\selectfont\bfseries}
   {}{0pt}{}
-\titlespacing*{\section}{0pt}{9pt}{5pt}
+\titlespacing*{\section}{0pt}{11pt}{6pt}
 
 \newcommand{\runsubsection}[1]{%
   {\fontsize{12.5pt}{14.5pt}\selectfont\bfseries #1}%
@@ -73,11 +73,11 @@
   {\fontsize{12pt}{14.5pt}\selectfont #1\par}%
 }
 \newcommand{\location}[1]{%
-  {\color{secondary}\fontsize{9.5pt}{11.5pt}\selectfont #1\par}%
+  {\color{secondary}\fontsize{10pt}{12pt}\selectfont #1\par}%
 }
-\newcommand{\sectionsep}{\par\vspace{2pt}}
+\newcommand{\sectionsep}{\par\vspace{3pt}}
 
 \newenvironment{tightemize}
   {\begin{itemize}[leftmargin=1.25em,label=\textbullet,
-    topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt]}
+    topsep=4pt,itemsep=3pt,parsep=0pt,partopsep=0pt]}
   {\end{itemize}}
